@@ -1,45 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace Struct
+namespace Activity3
 {
-    public class StructAct
+    internal class Program
     {
-        struct Employee
+        static void Main(string[] args)
         {
-            public string firstName;
-            public string lastName;
-            public int age;
-            public string completedTraining;
+            
+            string[] email = { "email1@gmail.com", "email2@gmail.com", "email@gmail.com" };
+            string[] username = { "username1", "username2", "username3" };
+            string[] password = { "password1", "password2", "password3" };
+
+            //Input the index value
+            Console.WriteLine("Index: ");
+            int index = Convert.ToInt32(Console.ReadLine());
+
+            // Displaying the values
+            Console.WriteLine("Email: " + email[index]);
+            Console.WriteLine("Username: " + username[index]); 
+            Console.WriteLine("Password: " + password[index]);
+
 
         }
+        
 
-        public static void Main(string[] args)
-        {
-            {
-                Employee employee1;
-
-                Console.WriteLine("Enter your First Name: ");
-                employee1.firstName = Console.ReadLine();
-
-                Console.WriteLine("Enter your Last Name: ");
-                employee1.lastName = Console.ReadLine();
-
-                Console.WriteLine("Enter your Age: ");
-                employee1.age = int.Parse(Console.ReadLine());
-
-                Console.WriteLine("Do you have a completed training?");
-                employee1.completedTraining = Console.ReadLine();
-
-                Console.WriteLine("\nEmployee's Information");
-                Console.WriteLine("Name : " + employee1.firstName + " " + employee1.lastName);
-                Console.WriteLine("Age : " + employee1.age);
-                Console.WriteLine("Completed Training? " + employee1.completedTraining);
-
-
-            }
-
-        }
+     
     }
 }
-
-    
