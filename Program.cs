@@ -1,45 +1,24 @@
 ﻿using System;
-
-namespace Struct
+using System.Collections.Generic;
+using System.Linq;
+namespace exercises
 {
-    public class StructAct
+    class Program
     {
-        struct Employee
+        static void Main(string[] args)
         {
-            public string firstName;
-            public string lastName;
-            public int age;
-            public string completedTraining;
+            //Display all the values 
+            List<int> ValueList = test(new List<int>(new int[] { 10, 20, 35, 65, 53, 48, 5, 1 }));
 
-        }
-
-        public static void Main(string[] args)
-        {
+            foreach (var i in ValueList)
             {
-                Employee employee1;
-
-                Console.WriteLine("Enter your First Name: ");
-                employee1.firstName = Console.ReadLine();
-
-                Console.WriteLine("Enter your Last Name: ");
-                employee1.lastName = Console.ReadLine();
-
-                Console.WriteLine("Enter your Age: ");
-                employee1.age = int.Parse(Console.ReadLine());
-
-                Console.WriteLine("Do you have a completed training?");
-                employee1.completedTraining = Console.ReadLine();
-
-                Console.WriteLine("\nEmployee's Information");
-                Console.WriteLine("Name : " + employee1.firstName + " " + employee1.lastName);
-                Console.WriteLine("Age : " + employee1.age);
-                Console.WriteLine("Completed Training? " + employee1.completedTraining);
-
-
+                Console.Write(i.ToString() + " ");
             }
-
+        }
+        public static List<int> test(List<int> nums)
+        {
+            //Condition to remove all integers ending with 5
+            return nums.Where(n => n % 10 < 5).ToList();
         }
     }
 }
-
-    
