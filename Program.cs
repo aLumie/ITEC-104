@@ -18,7 +18,7 @@ namespace exercises
         public static List<int> test(List<int> nums)
         {
             //Condition to remove all integers ending with 5
-            return nums.Where(n => n % 10 < 5).ToList();
+            return nums.Where(n => n % 10 != 5).ToList();
         }
     }
 }
