@@ -5,7 +5,7 @@ namespace Act6 {
     internal class Program
     {
         //User input process 
-        public static void Hash(out HashSet<int> HashSets) // adding my own reference type "Hash"
+        public static void Hash(out HashSet<int> HashSets) // adding my own method "Hash"
         {
             HashSets = new HashSet<int>(); // Declaring an int variable
             for (int i = 0; i < 5; i++)
