@@ -1,0 +1,131 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StackMidterm
+{
+    interface Stack
+    {
+        Boolean StackItem();
+        void Push(Object element);
+        Object Pop();
+        Object Peek();
+        void Display();
+    }
+    class stack : Stack
+    {
+        private int StackSize;
+        public int StackSizeSet {
+            get { return StackSize; }
+            set { StackSize = value; }
+        }
+        public int top;
+        Object[] item;
+        public stack() {
+            StackSizeSet = 10;
+            item = new Object[StackSizeSet];
+            top = -1;
+        }
+        public stack(int stacksize) {
+            StackSizeSet = stacksize;
+            item = new Object[StackSizeSet];
+            top = -1;
+        }
+        public bool StackItem() {
+            if (top == -1) return true;
+
+            return false;
+        }
+        public void Push(object element) { // new object for push method
+            if (top == (StackSize - 1))
+            {
+                Console.WriteLine("The stack is full");
+            }
+
+            else
+            {
+                item[++top] = element;
+                Console.WriteLine("The Item is Pushed Succesfully");
+            }
+        }
+        public object Pop() { // new object for the pop method
+            if (StackItem())
+            {
+                Console.WriteLine("Stack is empty");
+                return "There are no elements in the Stack";
+            }
+            else
+            {
+                return item[top--];
+            }
+        }
+        public object Peek() { // new object for the peek method
+            if (StackItem())
+            {
+                Console.WriteLine("Stack is empty");
+                return "There are no elements in the Stack";
+            }
+            else
+            {
+                return item[top];
+            }
+        }
+
+        public void Display()
+        {
+            for (int i = top; i > -1; i--)
+            {
+                Console.WriteLine("Item {0}: {1}", (i + 1), item[i]);
+            }
+        }
+    }
+    class Midterm
+    {
+        static void Main(string[] args) 
+        {
+            stack stck = new stack();
+
+            while (true)
+            {
+                
+                Console.WriteLine("\nStack Menu    (Note: Size -- 10)\n");
+                Console.WriteLine("1. Add an element");
+                Console.WriteLine("2. See the Top element");
+                Console.WriteLine("3. Remove top element");
+                Console.WriteLine("4. Display stack elements");
+                Console.WriteLine("5. Exit");
+                Console.Write("\nSelect your choice: ");
+
+                int Menu = Convert.ToInt32(Console.ReadLine());
+                switch (Menu) // using switch case for the Menu
+                {
+                    case 1:
+                        Console.WriteLine("Enter an Element : ");
+                        stck.Push(Console.ReadLine());
+                        break;
+
+                    case 2:
+                        Console.WriteLine("Top elements : {0}", stck.Peek());
+                        break;
+
+                    case 3:
+                        Console.WriteLine("Element removed: {0}", stck.Pop());
+                        break;
+
+                    case 4:
+                        stck.Display();
+                        break;
+
+                    case 5:
+                        System.Environment.Exit(1);
+                        break;
+                }
+                Console.ReadKey();
+            }
+        }
+    }
+
+    
+}
